@@ -1,0 +1,128 @@
+{
+  "version": "7.4.2",
+  "objects": [
+    {
+      "id": "c01b1c80-0492-11ea-a558-45c17a9c8462",
+      "type": "dashboard",
+      "updated_at": "2019-11-14T12:57:56.059Z",
+      "version": "WzM0LDFd",
+      "attributes": {
+        "title": "Dashboard Jira jmxinstruments-gc",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"embeddableConfig\":{\"title\":\"Mark And Sweep Collect Time\"},\"gridData\":{\"h\":15,\"i\":\"b189d8ed-777a-4576-b74c-23e60f075aee\",\"w\":24,\"x\":0,\"y\":0},\"panelIndex\":\"b189d8ed-777a-4576-b74c-23e60f075aee\",\"title\":\"Mark And Sweep Collect Time\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{\"title\":\"GC Scavenge Collect Time\"},\"gridData\":{\"h\":15,\"i\":\"2ef2c9d0-0adb-42ca-8d2c-fad38fccdb8b\",\"w\":24,\"x\":24,\"y\":0},\"panelIndex\":\"2ef2c9d0-0adb-42ca-8d2c-fad38fccdb8b\",\"title\":\"GC Scavenge Collect Time\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_1\"},{\"embeddableConfig\":{\"title\":\"GC Scavenge Count\"},\"gridData\":{\"h\":15,\"i\":\"aa3ad378-898b-4317-b5e6-d6896dd7dcbd\",\"w\":24,\"x\":24,\"y\":15},\"panelIndex\":\"aa3ad378-898b-4317-b5e6-d6896dd7dcbd\",\"title\":\"GC Scavenge Count\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_2\"},{\"embeddableConfig\":{\"title\":\"Mark and Sweep Count\"},\"gridData\":{\"h\":15,\"i\":\"18d49603-65d5-4574-9717-bba5f16370b4\",\"w\":24,\"x\":0,\"y\":15},\"panelIndex\":\"18d49603-65d5-4574-9717-bba5f16370b4\",\"title\":\"Mark and Sweep Count\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_3\"}]",
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+        }
+      },
+      "references": [
+        {
+          "name": "panel_0",
+          "type": "visualization",
+          "id": "3f6a6880-062b-11ea-8f23-85213792d1cd"
+        },
+        {
+          "name": "panel_1",
+          "type": "visualization",
+          "id": "6cb39410-062b-11ea-8f23-85213792d1cd"
+        },
+        {
+          "name": "panel_2",
+          "type": "visualization",
+          "id": "7b27aea0-062b-11ea-8f23-85213792d1cd"
+        },
+        {
+          "name": "panel_3",
+          "type": "visualization",
+          "id": "99ab1d30-062b-11ea-8f23-85213792d1cd"
+        }
+      ],
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      }
+    },
+    {
+      "id": "3f6a6880-062b-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:56.059Z",
+      "version": "WzM1LDFd",
+      "attributes": {
+        "title": "jira jmxinstruments-gc mark&sweep collect time",
+        "visState": "{\"title\":\"jira jmxinstruments-gc mark&sweep collect time\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"max\",\"field\":\"CollectionTime\"},{\"unit\":\"1m\",\"id\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"derivative\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"},{\"unit\":\"\",\"id\":\"eaa57840-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"positive_only\",\"field\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"\",\"type\":\"timeseries\",\"terms_order_by\":\"_key\",\"terms_field\":\"node.keyword\",\"split_color_mode\":\"gradient\",\"offset_time\":\"\",\"value_template\":\"{{value}}\",\"filter\":{\"query\":\"name.keyword : \\\"java.lang:name=PS MarkSweep,type=GarbageCollector\\\" \",\"language\":\"kuery\"}}],\"time_field\":\"@timestamp\",\"index_pattern\":\"jmxinstruments-gc\",\"interval\":\"\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"show_grid\":1,\"default_index_pattern\":\"applog*\",\"default_timefield\":\"@timestamp\",\"isModelInvalid\":false,\"annotations\":[]},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "6cb39410-062b-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:56.059Z",
+      "version": "WzM2LDFd",
+      "attributes": {
+        "title": "jira jmxinstruments-gc scavenge collect time",
+        "visState": "{\"title\":\"jira jmxinstruments-gc scavenge collect time\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"max\",\"field\":\"CollectionTime\"},{\"unit\":\"1m\",\"id\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"derivative\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"},{\"unit\":\"\",\"id\":\"eaa57840-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"positive_only\",\"field\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"\",\"type\":\"timeseries\",\"terms_order_by\":\"_key\",\"terms_field\":\"node.keyword\",\"split_color_mode\":\"gradient\",\"offset_time\":\"\",\"value_template\":\"{{value}}\",\"filter\":{\"query\":\"name.keyword : \\\"java.lang:name=PS Scavenge,type=GarbageCollector\\\" \",\"language\":\"kuery\"}}],\"time_field\":\"@timestamp\",\"index_pattern\":\"jmxinstruments-gc\",\"interval\":\"\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"show_grid\":1,\"default_index_pattern\":\"applog*\",\"default_timefield\":\"@timestamp\",\"isModelInvalid\":false,\"annotations\":[]},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "7b27aea0-062b-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:56.059Z",
+      "version": "WzM3LDFd",
+      "attributes": {
+        "title": "jira jmxinstruments-gc scavenge count",
+        "visState": "{\"title\":\"jira jmxinstruments-gc scavenge count\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"max\",\"field\":\"CollectionCount\"},{\"unit\":\"1m\",\"id\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"derivative\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"},{\"unit\":\"\",\"id\":\"eaa57840-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"positive_only\",\"field\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"\",\"type\":\"timeseries\",\"terms_order_by\":\"_key\",\"terms_field\":\"node.keyword\",\"split_color_mode\":\"gradient\",\"offset_time\":\"\",\"value_template\":\"{{value}}\",\"filter\":{\"query\":\"name.keyword : \\\"java.lang:name=PS Scavenge,type=GarbageCollector\\\" \",\"language\":\"kuery\"}}],\"time_field\":\"@timestamp\",\"index_pattern\":\"jmxinstruments-gc\",\"interval\":\"\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"show_grid\":1,\"default_index_pattern\":\"applog*\",\"default_timefield\":\"@timestamp\",\"isModelInvalid\":false,\"annotations\":[]},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "99ab1d30-062b-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:56.059Z",
+      "version": "WzM4LDFd",
+      "attributes": {
+        "title": "jira jmxinstruments-gc mark&sweep count",
+        "visState": "{\"title\":\"jira jmxinstruments-gc mark&sweep count\",\"type\":\"metrics\",\"params\":{\"id\":\"61ca57f0-469d-11e7-af02-69e470af7417\",\"type\":\"timeseries\",\"series\":[{\"id\":\"61ca57f1-469d-11e7-af02-69e470af7417\",\"color\":\"#68BC00\",\"split_mode\":\"terms\",\"metrics\":[{\"id\":\"61ca57f2-469d-11e7-af02-69e470af7417\",\"type\":\"max\",\"field\":\"CollectionCount\"},{\"unit\":\"1m\",\"id\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"derivative\",\"field\":\"61ca57f2-469d-11e7-af02-69e470af7417\"},{\"unit\":\"\",\"id\":\"eaa57840-0629-11ea-b4b6-e58ba68236bb\",\"type\":\"positive_only\",\"field\":\"cb1331c0-0629-11ea-b4b6-e58ba68236bb\"}],\"separate_axis\":0,\"axis_position\":\"right\",\"formatter\":\"number\",\"chart_type\":\"line\",\"line_width\":1,\"point_size\":1,\"fill\":0.5,\"stacked\":\"none\",\"label\":\"mark&sweep count\",\"type\":\"timeseries\",\"terms_order_by\":\"_key\",\"terms_field\":\"node.keyword\",\"split_color_mode\":\"gradient\",\"offset_time\":\"\",\"value_template\":\"{{value}}\",\"filter\":{\"query\":\"name.keyword : \\\"java.lang:name=PS MarkSweep,type=GarbageCollector\\\" \",\"language\":\"kuery\"}}],\"time_field\":\"@timestamp\",\"index_pattern\":\"jmxinstruments-gc\",\"interval\":\"\",\"axis_position\":\"left\",\"axis_formatter\":\"number\",\"axis_scale\":\"normal\",\"show_legend\":1,\"show_grid\":1,\"default_index_pattern\":\"applog*\",\"default_timefield\":\"@timestamp\",\"isModelInvalid\":false,\"annotations\":[]},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    }
+  ]
+}

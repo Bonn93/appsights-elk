@@ -1,0 +1,34 @@
+ - pipeline.id: access_log_generic
+   path.config: "/usr/share/logstash/config/general/access_log.conf"
+ - pipeline.id: access_log_node1
+   path.config: "/usr/share/logstash/config/general/n1/access_log1.conf"
+ - pipeline.id: access_log_node2
+   path.config: "/usr/share/logstash/config/general/n2/access_log2.conf"
+ - pipeline.id: access_log_node3
+   path.config: "/usr/share/logstash/config/general/n3/access_log3.conf"
+ - pipeline.id: jira_app_log
+   path.config: "/usr/share/logstash/config/jira/jira_log.conf"
+ - pipeline.id: jira_perf_log
+   path.config: "/usr/share/logstash/config/jira/jira_perf_log.conf"
+ - pipeline.id: jira_security_log
+   path.config: "/usr/share/logstash/config/jira/jira_security_log.conf"
+ - pipeline.id: jira_apdex_log
+   path.config: "/usr/share/logstash/config/jira/jira-apdex.conf"
+ - pipeline.id: jira_replicated_operation
+   path.config: "/usr/share/logstash/config/jira/jira_replicated_operation.conf"
+ - pipeline.id: gc_log
+   path.config: "/usr/share/logstash/config/general/gc_log.conf"
+ - pipeline.id: dumbo
+   path.config: "/usr/share/logstash/config/general/dumbo.conf"
+ - pipeline.id: catalina
+   path.config: "/usr/share/logstash/config/general/catalina_hung_threads.conf"
+ - pipeline.id: conf_app_log
+   path.config: "/usr/share/logstash/config/confluence/conf_log.conf"
+ - pipeline.id: conf_sync_log
+   path.config: "/usr/share/logstash/config/confluence/conf_synchrony.conf"
+ - pipeline.id: crowd_app_log
+   path.config: "/usr/share/logstash/config/crowd/crowd_log.conf"
+ - pipeline.id: bbs_app_log
+   path.config: "/usr/share/logstash/config/bitbucket/bitbucket_log.conf"
+ - pipeline.id: bbs_access_log
+   path.config: "/usr/share/logstash/config/bitbucket/bitbucket_access_log.conf"

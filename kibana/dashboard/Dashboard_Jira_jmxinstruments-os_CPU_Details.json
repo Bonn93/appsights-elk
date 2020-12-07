@@ -1,0 +1,229 @@
+{
+  "version": "7.4.2",
+  "objects": [
+    {
+      "id": "2b37f580-061c-11ea-8f23-85213792d1cd",
+      "type": "dashboard",
+      "updated_at": "2019-11-14T12:57:57.123Z",
+      "version": "WzM5LDFd",
+      "attributes": {
+        "title": "Dashboard Jira jmxinstruments-os CPU Details",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"embeddableConfig\":{},\"gridData\":{\"h\":11,\"i\":\"3cab4652-7da2-442f-aa96-216c063ccc14\",\"w\":10,\"x\":0,\"y\":0},\"panelIndex\":\"3cab4652-7da2-442f-aa96-216c063ccc14\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{},\"gridData\":{\"h\":11,\"i\":\"55abd6b0-af41-4c47-a764-27c49651e12b\",\"w\":14,\"x\":10,\"y\":0},\"panelIndex\":\"55abd6b0-af41-4c47-a764-27c49651e12b\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_1\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 50\":\"rgb(0,104,55)\",\"50 - 75\":\"rgb(255,255,190)\",\"75 - 100\":\"rgb(165,0,38)\"},\"legendOpen\":false}},\"gridData\":{\"h\":11,\"i\":\"c3b2c602-1a1b-40f5-829e-a048a7f18cab\",\"w\":12,\"x\":24,\"y\":0},\"panelIndex\":\"c3b2c602-1a1b-40f5-829e-a048a7f18cab\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_2\"},{\"embeddableConfig\":{\"vis\":{\"defaultColors\":{\"0 - 50\":\"rgb(0,104,55)\",\"50 - 75\":\"rgb(255,255,190)\",\"75 - 100\":\"rgb(165,0,38)\"},\"legendOpen\":false}},\"gridData\":{\"h\":11,\"i\":\"45b95188-a2df-404d-a9ad-9521a622edba\",\"w\":12,\"x\":36,\"y\":0},\"panelIndex\":\"45b95188-a2df-404d-a9ad-9521a622edba\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_3\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"Max ProcessCpuLoad\":\"#BADFF4\",\"Max SystemCpuLoad\":\"#BF1B00\"},\"legendOpen\":false}},\"gridData\":{\"h\":15,\"i\":\"3c713fd6-a632-4398-a1a9-16a164972ae2\",\"w\":24,\"x\":0,\"y\":11},\"panelIndex\":\"3c713fd6-a632-4398-a1a9-16a164972ae2\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_4\"},{\"embeddableConfig\":{\"vis\":{\"colors\":{\"Max MaxFileDescriptorCount\":\"#7EB26D\",\"Max OpenFileDescriptorCount\":\"#BF1B00\"},\"legendOpen\":false}},\"gridData\":{\"h\":15,\"i\":\"3afebdba-fb00-4c2a-91d8-cce6f09e460f\",\"w\":24,\"x\":24,\"y\":11},\"panelIndex\":\"3afebdba-fb00-4c2a-91d8-cce6f09e460f\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_5\"}]",
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[]}"
+        }
+      },
+      "references": [
+        {
+          "name": "panel_0",
+          "type": "visualization",
+          "id": "0dd8e2b0-061c-11ea-8f23-85213792d1cd"
+        },
+        {
+          "name": "panel_1",
+          "type": "visualization",
+          "id": "46a1aeb0-0621-11ea-8f23-85213792d1cd"
+        },
+        {
+          "name": "panel_2",
+          "type": "visualization",
+          "id": "38605200-0623-11ea-8f23-85213792d1cd"
+        },
+        {
+          "name": "panel_3",
+          "type": "visualization",
+          "id": "87955660-0621-11ea-8f23-85213792d1cd"
+        },
+        {
+          "name": "panel_4",
+          "type": "visualization",
+          "id": "560761c0-012a-11ea-baf8-d177b4c78379"
+        },
+        {
+          "name": "panel_5",
+          "type": "visualization",
+          "id": "e457cbc0-0172-11ea-bb4a-ab0f7aefc195"
+        }
+      ],
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      }
+    },
+    {
+      "id": "0dd8e2b0-061c-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:57.123Z",
+      "version": "WzQwLDFd",
+      "attributes": {
+        "title": "Jira jmxinstruments-os Available Processors",
+        "visState": "{\"title\":\"Jira jmxinstruments-os Available Processors\",\"type\":\"metric\",\"params\":{\"addLegend\":false,\"addTooltip\":true,\"dimensions\":{\"metrics\":[{\"accessor\":0,\"format\":{\"id\":\"number\",\"params\":{}},\"type\":\"vis_dimension\"}]},\"metric\":{\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":10000,\"type\":\"range\"}],\"invertColors\":false,\"labels\":{\"show\":true},\"metricColorMode\":\"None\",\"percentageMode\":false,\"style\":{\"bgColor\":false,\"bgFill\":\"#000\",\"fontSize\":60,\"labelColor\":false,\"subText\":\"\"},\"useRanges\":false},\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"AvailableProcessors\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"node.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "jmxinstruments-os"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "46a1aeb0-0621-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:57.123Z",
+      "version": "WzQxLDFd",
+      "attributes": {
+        "title": "Jira jmxinstruments-os Max CommittedVirtualMemory Size",
+        "visState": "{\"title\":\"Jira jmxinstruments-os Max CommittedVirtualMemory Size\",\"type\":\"metric\",\"params\":{\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"type\":\"range\",\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}},\"dimensions\":{\"metrics\":[{\"type\":\"vis_dimension\",\"accessor\":1,\"format\":{\"id\":\"number\",\"params\":{}}}],\"bucket\":{\"type\":\"vis_dimension\",\"accessor\":0,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}}}},\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"CommittedVirtualMemorySize in GB\",\"customLabel\":\" \"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"node.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "jmxinstruments-os"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "38605200-0623-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:57.123Z",
+      "version": "WzQyLDFd",
+      "attributes": {
+        "title": "Jira jxminstruments-os physical",
+        "visState": "{\"title\":\"Jira jxminstruments-os physical\",\"type\":\"gauge\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"dimensions\":{\"x\":null,\"y\":[{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"max\"}],\"series\":[{\"accessor\":0,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]},\"gauge\":{\"alignment\":\"automatic\",\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":50},{\"from\":50,\"to\":75},{\"from\":75,\"to\":100}],\"extendRange\":true,\"gaugeColorMode\":\"Labels\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Arc\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"rgba(105,112,125,0.2)\",\"labels\":false,\"show\":true},\"style\":{\"bgColor\":true,\"bgFill\":\"rgba(105,112,125,0.2)\",\"bgMask\":false,\"bgWidth\":0.9,\"fontSize\":60,\"mask\":false,\"maskBars\":50,\"subText\":\"\",\"width\":0.9},\"type\":\"meter\"},\"isDisplayWarning\":false,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"UsedPhysicalMemory\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"node.keyword\",\"orderBy\":\"_key\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 50\":\"rgb(0,104,55)\",\"50 - 75\":\"rgb(255,255,190)\",\"75 - 100\":\"rgb(165,0,38)\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "jmxinstruments-os"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "87955660-0621-11ea-8f23-85213792d1cd",
+      "type": "visualization",
+      "updated_at": "2019-11-14T12:57:57.123Z",
+      "version": "WzQzLDFd",
+      "attributes": {
+        "title": "Jira jxminstruments-os swap",
+        "visState": "{\"title\":\"Jira jxminstruments-os swap\",\"type\":\"gauge\",\"params\":{\"addLegend\":true,\"addTooltip\":true,\"dimensions\":{\"x\":null,\"y\":[{\"accessor\":1,\"format\":{\"id\":\"number\"},\"params\":{},\"aggType\":\"max\"}],\"series\":[{\"accessor\":0,\"format\":{\"id\":\"terms\",\"params\":{\"id\":\"string\",\"otherBucketLabel\":\"Other\",\"missingBucketLabel\":\"Missing\"}},\"params\":{},\"aggType\":\"terms\"}]},\"gauge\":{\"alignment\":\"automatic\",\"backStyle\":\"Full\",\"colorSchema\":\"Green to Red\",\"colorsRange\":[{\"from\":0,\"to\":50},{\"from\":50,\"to\":75},{\"from\":75,\"to\":100}],\"extendRange\":true,\"gaugeColorMode\":\"Labels\",\"gaugeStyle\":\"Full\",\"gaugeType\":\"Arc\",\"invertColors\":false,\"labels\":{\"color\":\"black\",\"show\":true},\"orientation\":\"vertical\",\"percentageMode\":false,\"scale\":{\"color\":\"rgba(105,112,125,0.2)\",\"labels\":false,\"show\":true},\"style\":{\"bgColor\":true,\"bgFill\":\"rgba(105,112,125,0.2)\",\"bgMask\":false,\"bgWidth\":0.9,\"fontSize\":60,\"mask\":false,\"maskBars\":50,\"subText\":\"\",\"width\":0.9},\"type\":\"meter\"},\"isDisplayWarning\":false,\"type\":\"gauge\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"max\",\"schema\":\"metric\",\"params\":{\"field\":\"UsedSwapSpace\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"node.keyword\",\"orderBy\":\"_key\",\"order\":\"desc\",\"size\":5,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"}}]}",
+        "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 50\":\"rgb(0,104,55)\",\"50 - 75\":\"rgb(255,255,190)\",\"75 - 100\":\"rgb(165,0,38)\"}}}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "jmxinstruments-os"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "560761c0-012a-11ea-baf8-d177b4c78379",
+      "type": "visualization",
+      "updated_at": "2019-11-14T13:27:13.006Z",
+      "version": "WzEwMSwxXQ==",
+      "attributes": {
+        "title": "max process/system cpu load",
+        "visState": "{\n  \"title\": \"max process/system cpu load\",\n  \"type\": \"line\",\n  \"params\": {\n    \"addLegend\": true,\n    \"addTimeMarker\": false,\n    \"addTooltip\": true,\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"labels\": {\n          \"filter\": true,\n          \"show\": true,\n          \"truncate\": 100\n        },\n        \"position\": \"bottom\",\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"show\": true,\n        \"style\": {},\n        \"title\": {},\n        \"type\": \"category\"\n      }\n    ],\n    \"dimensions\": {\n      \"x\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"date\",\n          \"params\": {\n            \"pattern\": \"HH:mm\"\n          }\n        },\n        \"params\": {\n          \"date\": true,\n          \"interval\": \"PT30M\",\n          \"format\": \"HH:mm\",\n          \"bounds\": {\n            \"min\": \"2019-10-29T17:41:52.235Z\",\n            \"max\": \"2019-10-31T06:13:49.935Z\"\n          }\n        },\n        \"aggType\": \"date_histogram\"\n      },\n      \"y\": [\n        {\n          \"accessor\": 1,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"max\"\n        },\n        {\n          \"accessor\": 2,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"max\"\n        }\n      ]\n    },\n    \"grid\": {\n      \"categoryLines\": false\n    },\n    \"labels\": {},\n    \"legendPosition\": \"right\",\n    \"seriesParams\": [\n      {\n        \"data\": {\n          \"id\": \"1\",\n          \"label\": \"Max SystemCpuLoad\"\n        },\n        \"drawLinesBetweenPoints\": true,\n        \"mode\": \"normal\",\n        \"show\": \"true\",\n        \"showCircles\": true,\n        \"type\": \"line\",\n        \"valueAxis\": \"ValueAxis-1\"\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"5\",\n          \"label\": \"Max ProcessCpuLoad\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      }\n    ],\n    \"thresholdLine\": {\n      \"color\": \"#34130C\",\n      \"show\": false,\n      \"style\": \"full\",\n      \"value\": 10,\n      \"width\": 1\n    },\n    \"times\": [],\n    \"type\": \"line\",\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"labels\": {\n          \"filter\": false,\n          \"rotate\": 0,\n          \"show\": true,\n          \"truncate\": 100\n        },\n        \"name\": \"LeftAxis-1\",\n        \"position\": \"left\",\n        \"scale\": {\n          \"mode\": \"normal\",\n          \"type\": \"linear\"\n        },\n        \"show\": true,\n        \"style\": {},\n        \"title\": {\n          \"text\": \"Max SystemCpuLoad\"\n        },\n        \"type\": \"value\"\n      }\n    ]\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"SystemCpuLoad\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"timeRange\": {\n          \"from\": \"2019-10-29T17:41:52.235Z\",\n          \"to\": \"2019-10-31T06:13:49.935Z\"\n        },\n        \"useNormalizedEsInterval\": true,\n        \"interval\": \"auto\",\n        \"drop_partials\": false,\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"5\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"ProcessCpuLoad\"\n      }\n    },\n    {\n      \"id\": \"6\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"node.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 5,\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"row\": true\n      }\n    }\n  ]\n}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"query\": {\n    \"language\": \"kuery\",\n    \"query\": \"\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "id": "jmxinstruments-os",
+          "type": "index-pattern"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "e457cbc0-0172-11ea-bb4a-ab0f7aefc195",
+      "type": "visualization",
+      "updated_at": "2019-11-14T13:24:08.273Z",
+      "version": "Wzk1LDFd",
+      "attributes": {
+        "title": "antler_jmxinstruments-os-file_handlers_over_time_chart_per_node",
+        "visState": "{\n  \"title\": \"antler_jmxinstruments-os-file_handlers_over_time_chart_per_node\",\n  \"type\": \"line\",\n  \"params\": {\n    \"type\": \"line\",\n    \"grid\": {\n      \"categoryLines\": false\n    },\n    \"categoryAxes\": [\n      {\n        \"id\": \"CategoryAxis-1\",\n        \"type\": \"category\",\n        \"position\": \"bottom\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"filter\": true,\n          \"truncate\": 100\n        },\n        \"title\": {}\n      }\n    ],\n    \"valueAxes\": [\n      {\n        \"id\": \"ValueAxis-1\",\n        \"name\": \"LeftAxis-1\",\n        \"type\": \"value\",\n        \"position\": \"left\",\n        \"show\": true,\n        \"style\": {},\n        \"scale\": {\n          \"type\": \"linear\",\n          \"mode\": \"normal\"\n        },\n        \"labels\": {\n          \"show\": true,\n          \"rotate\": 0,\n          \"filter\": false,\n          \"truncate\": 100\n        },\n        \"title\": {\n          \"text\": \"Max MaxFileDescriptorCount\"\n        }\n      }\n    ],\n    \"seriesParams\": [\n      {\n        \"show\": \"true\",\n        \"type\": \"area\",\n        \"mode\": \"normal\",\n        \"data\": {\n          \"label\": \"Max MaxFileDescriptorCount\",\n          \"id\": \"1\"\n        },\n        \"valueAxis\": \"ValueAxis-1\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true\n      },\n      {\n        \"show\": true,\n        \"mode\": \"normal\",\n        \"type\": \"line\",\n        \"drawLinesBetweenPoints\": true,\n        \"showCircles\": true,\n        \"data\": {\n          \"id\": \"4\",\n          \"label\": \"Max OpenFileDescriptorCount\"\n        },\n        \"valueAxis\": \"ValueAxis-1\"\n      }\n    ],\n    \"addTooltip\": true,\n    \"addLegend\": true,\n    \"legendPosition\": \"right\",\n    \"times\": [],\n    \"addTimeMarker\": false,\n    \"labels\": {},\n    \"thresholdLine\": {\n      \"show\": false,\n      \"value\": 10,\n      \"width\": 1,\n      \"style\": \"full\",\n      \"color\": \"#34130C\"\n    },\n    \"dimensions\": {\n      \"x\": {\n        \"accessor\": 0,\n        \"format\": {\n          \"id\": \"date\",\n          \"params\": {\n            \"pattern\": \"YYYY-MM-DD HH:mm\"\n          }\n        },\n        \"params\": {\n          \"date\": true,\n          \"interval\": \"PT3H\",\n          \"format\": \"YYYY-MM-DD HH:mm\",\n          \"bounds\": {\n            \"min\": \"2019-10-23T10:34:18.386Z\",\n            \"max\": \"2019-11-03T00:54:18.386Z\"\n          }\n        },\n        \"aggType\": \"date_histogram\"\n      },\n      \"y\": [\n        {\n          \"accessor\": 2,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"max\"\n        },\n        {\n          \"accessor\": 3,\n          \"format\": {\n            \"id\": \"number\"\n          },\n          \"params\": {},\n          \"aggType\": \"max\"\n        }\n      ],\n      \"splitRow\": [\n        {\n          \"accessor\": 1,\n          \"format\": {\n            \"id\": \"terms\",\n            \"params\": {\n              \"id\": \"string\",\n              \"otherBucketLabel\": \"Other\",\n              \"missingBucketLabel\": \"Missing\"\n            }\n          },\n          \"params\": {},\n          \"aggType\": \"terms\"\n        }\n      ]\n    }\n  },\n  \"aggs\": [\n    {\n      \"id\": \"1\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"MaxFileDescriptorCount\"\n      }\n    },\n    {\n      \"id\": \"2\",\n      \"enabled\": true,\n      \"type\": \"date_histogram\",\n      \"schema\": \"segment\",\n      \"params\": {\n        \"field\": \"@timestamp\",\n        \"timeRange\": {\n          \"from\": \"2019-10-23T10:34:18.386Z\",\n          \"to\": \"2019-11-03T00:54:18.386Z\"\n        },\n        \"useNormalizedEsInterval\": true,\n        \"interval\": \"auto\",\n        \"drop_partials\": false,\n        \"min_doc_count\": 1,\n        \"extended_bounds\": {}\n      }\n    },\n    {\n      \"id\": \"4\",\n      \"enabled\": true,\n      \"type\": \"max\",\n      \"schema\": \"metric\",\n      \"params\": {\n        \"field\": \"OpenFileDescriptorCount\"\n      }\n    },\n    {\n      \"id\": \"5\",\n      \"enabled\": true,\n      \"type\": \"terms\",\n      \"schema\": \"split\",\n      \"params\": {\n        \"field\": \"node.keyword\",\n        \"orderBy\": \"1\",\n        \"order\": \"desc\",\n        \"size\": 5,\n        \"otherBucket\": false,\n        \"otherBucketLabel\": \"Other\",\n        \"missingBucket\": false,\n        \"missingBucketLabel\": \"Missing\",\n        \"row\": true\n      }\n    }\n  ]\n}",
+        "uiStateJSON": "{\n  \"vis\": {\n    \"colors\": {\n      \"Max MaxFileDescriptorCount\": \"#58140C\",\n      \"Max OpenFileDescriptorCount\": \"#E0F9D7\"\n    }\n  }\n}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\n  \"query\": {\n    \"query\": \"\",\n    \"language\": \"kuery\"\n  },\n  \"filter\": [],\n  \"indexRefName\": \"kibanaSavedObjectMeta.searchSourceJSON.index\"\n}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "id": "jmxinstruments-os",
+          "type": "index-pattern"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "jmxinstruments-os",
+      "type": "index-pattern",
+      "updated_at": "2019-11-14T13:20:11.905Z",
+      "version": "WzkyLDFd",
+      "attributes": {
+        "title": "jmxinstruments-os",
+        "timeFieldName": "@timestamp",
+        "fields": "[{\"name\":\"@timestamp\",\"type\":\"date\",\"esTypes\":[\"date\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"@version\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"@version.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"@version\",\"subType\":\"multi\"},{\"name\":\"AvailableProcessors\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"CommittedVirtualMemorySize\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"FreePhysicalMemorySize\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"FreeSwapSpaceSize\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"MaxFileDescriptorCount\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"OpenFileDescriptorCount\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"ProcessCpuLoad\",\"type\":\"number\",\"esTypes\":[\"float\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"ProcessCpuTime\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"SystemCpuLoad\",\"type\":\"number\",\"esTypes\":[\"float\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"SystemLoadAverage\",\"type\":\"number\",\"esTypes\":[\"float\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"TotalPhysicalMemorySize\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"TotalSwapSpaceSize\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"_id\",\"type\":\"string\",\"esTypes\":[\"_id\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"esTypes\":[\"_index\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"esTypes\":[\"_source\"],\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"esTypes\":[\"_type\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"agent.ephemeral_id\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"agent.ephemeral_id.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"agent.ephemeral_id\",\"subType\":\"multi\"},{\"name\":\"agent.hostname\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"agent.hostname.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"agent.hostname\",\"subType\":\"multi\"},{\"name\":\"agent.id\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"agent.id.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"agent.id\",\"subType\":\"multi\"},{\"name\":\"agent.type\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"agent.type.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"agent.type\",\"subType\":\"multi\"},{\"name\":\"agent.version\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"agent.version.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"agent.version\",\"subType\":\"multi\"},{\"name\":\"ecs.version\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"ecs.version.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"ecs.version\",\"subType\":\"multi\"},{\"name\":\"host.name\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"host.name.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"host.name\",\"subType\":\"multi\"},{\"name\":\"input.type\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"input.type.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"input.type\",\"subType\":\"multi\"},{\"name\":\"label\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"label.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"label\",\"subType\":\"multi\"},{\"name\":\"log.file.path\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"log.file.path.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"log.file.path\",\"subType\":\"multi\"},{\"name\":\"log.offset\",\"type\":\"number\",\"esTypes\":[\"long\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"name\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"name.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"name\",\"subType\":\"multi\"},{\"name\":\"node\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"node.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"node\",\"subType\":\"multi\"},{\"name\":\"supportzip\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"supportzip.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"supportzip\",\"subType\":\"multi\"},{\"name\":\"tags\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tags.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"tags\",\"subType\":\"multi\"},{\"name\":\"type\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"type.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"type\",\"subType\":\"multi\"},{\"name\":\"UsedPhysicalMemory\",\"type\":\"number\",\"count\":0,\"scripted\":true,\"script\":\"(doc['TotalPhysicalMemorySize'].value - doc['FreePhysicalMemorySize'].value) * 100 / doc['TotalPhysicalMemorySize'].value\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"UsedSwapSpace\",\"type\":\"number\",\"count\":0,\"scripted\":true,\"script\":\"if (doc['TotalSwapSpaceSize'].value == 0) { \\n  return 0;\\n}else { \\n  (doc['TotalSwapSpaceSize'].value - doc['FreeSwapSpaceSize'].value)  * 100 / doc['TotalSwapSpaceSize'].value\\n}\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"CommittedVirtualMemorySize in GB\",\"type\":\"number\",\"count\":0,\"scripted\":true,\"script\":\"doc['CommittedVirtualMemorySize'].value / 1024 /1024\",\"lang\":\"painless\",\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false}]"
+      },
+      "references": [],
+      "migrationVersion": {
+        "index-pattern": "6.5.0"
+      }
+    }
+  ]
+}

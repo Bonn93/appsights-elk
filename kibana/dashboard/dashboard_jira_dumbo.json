@@ -1,0 +1,119 @@
+{
+  "version": "7.4.2",
+  "objects": [
+    {
+      "id": "80df8610-0487-11ea-bb5d-0d352a4de900",
+      "type": "dashboard",
+      "updated_at": "2019-11-11T13:38:43.146Z",
+      "version": "WzMxLDFd",
+      "attributes": {
+        "title": "antler_dumbo_main_dashboard",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"embeddableConfig\":{\"title\":\"Node / SupportZip\"},\"gridData\":{\"h\":8,\"i\":\"df5942c6-47d2-488f-b868-3a9abe971e2c\",\"w\":48,\"x\":0,\"y\":0},\"panelIndex\":\"df5942c6-47d2-488f-b868-3a9abe971e2c\",\"title\":\"Node / SupportZip\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_0\"},{\"embeddableConfig\":{\"title\":\"Dumbo healtcheck\"},\"gridData\":{\"h\":25,\"i\":\"bd31cfd9-8ff5-4ef2-b6aa-b789d37e4dcb\",\"w\":48,\"x\":0,\"y\":8},\"panelIndex\":\"bd31cfd9-8ff5-4ef2-b6aa-b789d37e4dcb\",\"title\":\"Dumbo healtcheck\",\"version\":\"7.4.2\",\"panelRefName\":\"panel_1\"}]",
+        "optionsJSON": "{\"hidePanelTitles\":false,\"useMargins\":true}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"language\":\"kuery\",\"query\":\"\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"controlledBy\":\"1573478924809\",\"disabled\":false,\"key\":\"supportzip.keyword\",\"negate\":false,\"params\":{\"query\":\"Jira_jira-sd-app-01006_support_2019-11-01-18-02-31_2\"},\"type\":\"phrase\",\"value\":\"Jira_jira-sd-app-01006_support_2019-11-01-18-02-31_2\",\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index\"},\"query\":{\"match\":{\"supportzip.keyword\":{\"query\":\"Jira_jira-sd-app-01006_support_2019-11-01-18-02-31_2\",\"type\":\"phrase\"}}}}]}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.filter[0].meta.index",
+          "type": "index-pattern",
+          "id": "dumbo"
+        },
+        {
+          "name": "panel_0",
+          "type": "visualization",
+          "id": "4e207ef0-0487-11ea-bb5d-0d352a4de900"
+        },
+        {
+          "name": "panel_1",
+          "type": "search",
+          "id": "e923d5b0-0486-11ea-bb5d-0d352a4de900"
+        }
+      ],
+      "migrationVersion": {
+        "dashboard": "7.3.0"
+      }
+    },
+    {
+      "id": "dumbo",
+      "type": "index-pattern",
+      "updated_at": "2019-11-11T13:26:17.665Z",
+      "version": "WzE5LDFd",
+      "attributes": {
+        "title": "dumbo",
+        "fields": "[{\"name\":\"@timestamp\",\"type\":\"date\",\"esTypes\":[\"date\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true},{\"name\":\"@version\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"@version.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"@version\",\"subType\":\"multi\"},{\"name\":\"_id\",\"type\":\"string\",\"esTypes\":[\"_id\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_index\",\"type\":\"string\",\"esTypes\":[\"_index\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"_score\",\"type\":\"number\",\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_source\",\"type\":\"_source\",\"esTypes\":[\"_source\"],\"count\":0,\"scripted\":false,\"searchable\":false,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"_type\",\"type\":\"string\",\"esTypes\":[\"_type\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":false},{\"name\":\"description\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"description.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"description\",\"subType\":\"multi\"},{\"name\":\"host\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"host.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"host\",\"subType\":\"multi\"},{\"name\":\"message\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"message.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"message\",\"subType\":\"multi\"},{\"name\":\"node\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"node.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"node\",\"subType\":\"multi\"},{\"name\":\"path\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"path.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"path\",\"subType\":\"multi\"},{\"name\":\"priority\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"priority.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"priority\",\"subType\":\"multi\"},{\"name\":\"subpath\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"subpath.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"subpath\",\"subType\":\"multi\"},{\"name\":\"supportzip\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":2,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"supportzip.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"supportzip\",\"subType\":\"multi\"},{\"name\":\"tags\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"tags.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"tags\",\"subType\":\"multi\"},{\"name\":\"text\",\"type\":\"string\",\"esTypes\":[\"text\"],\"count\":1,\"scripted\":false,\"searchable\":true,\"aggregatable\":false,\"readFromDocValues\":false},{\"name\":\"text.keyword\",\"type\":\"string\",\"esTypes\":[\"keyword\"],\"count\":0,\"scripted\":false,\"searchable\":true,\"aggregatable\":true,\"readFromDocValues\":true,\"parent\":\"text\",\"subType\":\"multi\"}]",
+        "fieldFormatMap": "{\"priority\":{\"id\":\"color\",\"params\":{\"fieldType\":\"string\",\"colors\":[{\"range\":\"-Infinity:Infinity\",\"regex\":\"ok\",\"text\":\"#00B3A4\",\"background\":\"#c7f3f0\"},{\"range\":\"-Infinity:Infinity\",\"regex\":\"warning\",\"text\":\"#F98510\",\"background\":\"#f2dcc7\"},{\"range\":\"-Infinity:Infinity\",\"regex\":\"critical\",\"text\":\"#DB1374\",\"background\":\"#ffdced\"}]}}}"
+      },
+      "references": [],
+      "migrationVersion": {
+        "index-pattern": "6.5.0"
+      }
+    },
+    {
+      "id": "4e207ef0-0487-11ea-bb5d-0d352a4de900",
+      "type": "visualization",
+      "updated_at": "2019-11-11T13:38:34.070Z",
+      "version": "WzMwLDFd",
+      "attributes": {
+        "title": "antler_dumbo_supportzip_control",
+        "visState": "{\"title\":\"antler_dumbo_supportzip_control\",\"type\":\"input_control_vis\",\"params\":{\"controls\":[{\"id\":\"1573478924809\",\"fieldName\":\"supportzip.keyword\",\"parent\":\"\",\"label\":\"\",\"type\":\"list\",\"options\":{\"type\":\"terms\",\"multiselect\":true,\"dynamicOptions\":true,\"size\":5,\"order\":\"desc\"},\"indexPatternRefName\":\"control_0_index_pattern\"}],\"updateFiltersOnChange\":false,\"useTimeFilter\":false,\"pinFilters\":false},\"aggs\":[]}",
+        "uiStateJSON": "{}",
+        "description": "",
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [
+        {
+          "name": "control_0_index_pattern",
+          "type": "index-pattern",
+          "id": "dumbo"
+        }
+      ],
+      "migrationVersion": {
+        "visualization": "7.4.2"
+      }
+    },
+    {
+      "id": "e923d5b0-0486-11ea-bb5d-0d352a4de900",
+      "type": "search",
+      "updated_at": "2019-11-11T13:26:47.177Z",
+      "version": "WzIwLDFd",
+      "attributes": {
+        "title": "saved_query_dumbo_small_list",
+        "description": "",
+        "hits": 0,
+        "columns": [
+          "priority",
+          "text"
+        ],
+        "sort": [
+          [
+            "_score",
+            "desc"
+          ]
+        ],
+        "version": 1,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        }
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "dumbo"
+        }
+      ],
+      "migrationVersion": {
+        "search": "7.4.0"
+      }
+    }
+  ]
+}
