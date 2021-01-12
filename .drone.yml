@@ -11,7 +11,8 @@ steps:
     auto_tag: true
     dockerfile: elasticsearch/Dockerfile
     context: ./elasticsearch
-    auth: REPO_AUTH_TOKEN
+    auth: 
+      from_secret: REPO_AUTH_TOKEN
 - name: filebeat image build
   image: plugins/docker
   settings:
