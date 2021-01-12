@@ -1,0 +1,29 @@
+---
+kind: pipeline
+type: docker
+name: appsights-elk
+
+steps:
+- name: elasticsearch image build
+  image: plugins/docker
+  settings:
+    repo: mbern/elastic-supp
+    auto_tag: true
+    dockerfile: elasticsearch/Dockerfile
+    context: ./elasticsearch
+    token: REPO_AUTH_TOKEN
+- name: filebeat image build
+  image: plugins/docker
+  settings:
+    repo: mbern/filebeat-supp
+    auto_tag: true
+    dockerfile: filebeat/Dockerfile
+    context: ./filebeat
+    token: REPO_AUTH_TOKEN
+  
+
+
+trigger:
+  event:
+  - push
+  - tag
