@@ -11,8 +11,10 @@ steps:
     auto_tag: true
     dockerfile: elasticsearch/Dockerfile
     context: ./elasticsearch
-    auth: 
-      from_secret: REPO_AUTH_TOKEN
+    username:
+      from_secret: DOCKERHUB_USER
+    password:
+      from_secret: DOCKERHUB_PASS
 - name: filebeat image build
   image: plugins/docker
   settings:
@@ -20,7 +22,10 @@ steps:
     auto_tag: true
     dockerfile: filebeat/Dockerfile
     context: ./filebeat
-    auth: REPO_AUTH_TOKEN
+    username:
+      from_secret: DOCKERHUB_USER
+    password:
+      from_secret: DOCKERHUB_PASS
   
 
 
