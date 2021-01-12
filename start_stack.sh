@@ -5,13 +5,14 @@
 VERSION=$1
 
 # JVM sizing -- More data == Bigger JVM. Don't be stupid. 
-ELASTIC_JVM_MIN=-Xms2096m
-ELASTIC_JVM_MAX=-Xmx2096m
-LOGSTASH_JVM_MIN=-Xms2096m
-LOGSTASH_JVM_MAX=-Xmx2096m
+ELASTIC_JVM_MIN=-Xms4096m
+ELASTIC_JVM_MAX=-Xmx4096m
+LOGSTASH_JVM_MIN=-Xms1536m
+LOGSTASH_JVM_MAX=-Xmx1536m
 
 # Where yo data/logs at? 
 JIRA_LOGS=$HOME/jira
+JIRA_ACCESS_BEATS=$HOME/access-beats
 N1_LOGS=$HOME/jira_node1
 N2_LOGS=$HOME/jira_node2
 N3_LOGS=$HOME/jira_node3
@@ -23,14 +24,15 @@ CROWD_LOGS=$HOME/crowd
 # clear logs
 rm -rf $JIRA_LOGS/*
 rm -rf $HOME/jira_*/*
+rm -rf $HOME/access-beats/*
 
 
 # Manage Networks, to make things nice.. 
 docker network create elk
 
 # Check Container Status / kill existing
-docker stop elasticsearch logstash kibana webdav grafana
-docker rm elasticsearch logstash kibana webdav grafana
+docker stop elasticsearch logstash1 logstash2 kibana webdav grafana filebeat
+docker rm elasticsearch logstash1 logstash2 kibana webdav grafana filebeat
 
 # Start Elastic:
 docker run -d \
@@ -50,10 +52,15 @@ until $(curl --output /dev/null --silent --head --fail http://localhost:9200); d
 printf "Awesome!\n"
 
 # Start a webdav for ingest
+printf "Starting webdav...\n"
+
 docker run -d \
 --name=webdav \
 --network=elk \
--p 8080:80 \
+-p 9000:80 \
+-v $N1_LOGS:/var/webdav/access-beats1 \
+-v $N2_LOGS:/var/webdav/access-beats2 \
+-v $N3_LOGS:/var/webdav/access-beats3 \
 -v $JIRA_LOGS:/var/webdav/jira \
 -v $BITBUCKET_LOGS:/var/webdav/bitbucket \
 -v $CONFLUENCE_LOGS:/var/webdav/confluence \
@@ -62,22 +69,51 @@ docker run -d \
 mbern/nginx-suppdav:$VERSION
 
 # Start Logstash
+printf "Starting logstash1...\n"
+
 docker run -d \
--p 5000:5000 \
---name=logstash \
+--name=logstash1 \
 --network=elk \
 -e LS_JAVA_OPTS="$LOGSTASH_JVM_MIN $LOGSTASH_JVM_MAX" \
--v $JIRA_LOGS:/usr/share/logstash/logs \
--v $N1_LOGS:/usr/share/logstash/logs/n1 \
--v $N2_LOGS:/usr/share/logstash/logs/n2 \
--v $N3_LOGS:/usr/share/logstash/logs/n3 \
--v $BITBUCKET_LOGS:/usr/share/logstash/pipeline/bitbucket \
--v $CONFLUENCE_LOGS:/usr/share/logstash/pipeline/confluence \
--v $BAMBOO_LOGS:/usr/share/logstash/pipeline/bamboo \
--v $CROWD_LOGS:/usr/share/logstash/pipeline/crowd \
+-v $JIRA_LOGS:/usr/share/logstash/logs/jira \
+-v $BITBUCKET_LOGS:/usr/share/logstash/logs/bitbucket \
+-v $CONFLUENCE_LOGS:/usr/share/logstash/logs/confluence \
+-v $BAMBOO_LOGS:/usr/share/logstash/logs/bamboo \
+-v $CROWD_LOGS:/usr/share/logstash/logs/crowd \
 mbern/logstash-supp:$VERSION
 
+# Logstash-Beats
+printf "Starting logstash2...\n"
+
+docker run -d \
+--name=logstash2 \
+--network=elk \
+-p 5000:5001 \
+-p 5044:5044 \
+-e LS_JAVA_OPTS="$LOGSTASH_JVM_MIN $LOGSTASH_JVM_MAX" \
+mbern/logstashaccess-supp:$VERSION
+
+#-v $JIRA_LOGS:/usr/share/logstash/logs \
+#-v $N1_LOGS:/usr/share/logstash/logs/n1 \
+#-v $N2_LOGS:/usr/share/logstash/logs/n2 \
+#-v $N3_LOGS:/usr/share/logstash/logs/n3 \
+#-v $BITBUCKET_LOGS:/usr/share/logstash/pipeline/bitbucket \
+#-v $CONFLUENCE_LOGS:/usr/share/logstash/pipeline/confluence \
+#-v $BAMBOO_LOGS:/usr/share/logstash/pipeline/bamboo \
+#-v $CROWD_LOGS:/usr/share/logstash/pipeline/crowd \
+
+# Start Filebeat
+printf "Starting filebeat...\n"
+docker run -d \
+--name=filebeat \
+--network=elk \
+-v $N1_LOGS:/usr/share/filebeat/data/n1 \
+-v $N2_LOGS:/usr/share/filebeat/data/n2 \
+-v $N3_LOGS:/usr/share/filebeat/data/n3 \
+mbern/filebeat-supp:$VERSION
+
 # Start Kibana
+printf "Starting kibana...\n"
 docker run -d \
 -p 5601:5601 \
 --name=kibana \
@@ -128,5 +164,11 @@ docker run -d \
 --name=grafana \
 --network=elk \
 grafana/grafana
+
+printf "Grafana is ready, login via http://localhost:3000 using admin/admin\n"
+
+printf "Services are ready, place logs from your first jira node in $HOME/jira_node1\n"
+printf "Services are ready, place logs from your second jira node in $HOME/jira_node2\n"
+printf "Services are ready, place logs from your third jira node in $HOME/jira_node3\n"
 
 

@@ -15,6 +15,7 @@ steps:
       from_secret: DOCKERHUB_USER
     password:
       from_secret: DOCKERHUB_PASS
+
 - name: filebeat image build
   image: plugins/docker
   settings:
@@ -26,7 +27,54 @@ steps:
       from_secret: DOCKERHUB_USER
     password:
       from_secret: DOCKERHUB_PASS
+
+- name: kibana image build
+  image: plugins/docker
+  settings:
+    repo: mbern/kibana-supp
+    auto_tag: true
+    dockerfile: kibana/Dockerfile
+    context: ./kibana
+    username:
+      from_secret: DOCKERHUB_USER
+    password:
+      from_secret: DOCKERHUB_PASS
   
+- name: logstash1 image build
+  image: plugins/docker
+  settings:
+    repo: mbern/logstash-supp
+    auto_tag: true
+    dockerfile: logstash/Dockerfile
+    context: ./logstash
+    username:
+      from_secret: DOCKERHUB_USER
+    password:
+      from_secret: DOCKERHUB_PASS
+
+- name: logstash2 image build
+  image: plugins/docker
+  settings:
+    repo: mbern/logstashaccess-supp
+    auto_tag: true
+    dockerfile: logstash-access/Dockerfile
+    context: ./logstash-access
+    username:
+      from_secret: DOCKERHUB_USER
+    password:
+      from_secret: DOCKERHUB_PASS
+
+- name: webdav image build
+  image: plugins/docker
+  settings:
+    repo: mbern/webdav-supp
+    auto_tag: true
+    dockerfile: webdav/Dockerfile
+    context: ./webdav
+    username:
+      from_secret: DOCKERHUB_USER
+    password:
+      from_secret: DOCKERHUB_PASS
 
 
 trigger:

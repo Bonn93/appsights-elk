@@ -1,0 +1,7 @@
+ - pipeline.id: access_log_node1
+   path.config: "/usr/share/logstash/config/access_log1.conf"
+ - pipeline.id: access_log_node2
+   path.config: "/usr/share/logstash/config/access_log2.conf"
+ - pipeline.id: access_log_node3
+   path.config: "/usr/share/logstash/config/access_log3.conf"
+ 

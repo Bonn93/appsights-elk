@@ -1,0 +1,27 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - /usr/share/filebeat/data/n1/*.log
+  fields: 
+    node: node1
+    logtype: access
+  processors:
+  - add_tags:
+      tags: [ jiranode1 ]
+- type: log
+  paths:
+    - /usr/share/filebeat/data/n2/*.log
+  processors:
+  - add_tags:
+      tags: [ jiranode2 ]
+- type: log
+  paths:
+    - /usr/share/filebeat/data/n3/*.log
+  processors:
+  - add_tags:
+      tags: [ jiranode3 ]
+output.logstash:
+  hosts: ["logstash2:5044"]
+#output.elasticsearch:
+#  hosts: ["elasticsearch:9200"]
+logging.level: debug
